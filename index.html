@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
-<title>Administration de Champ-Ramard.fr</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Administration de Champ-Ramard.fr</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="icon" type="image/svg" href="assets/img/logo.svg"/>
+  <link rel="apple-touch-icon" type="image/svg" href="assets/img/logo.svg"/>
+  <link rel="shortcut icon" type="image/svg" href="assets/img/logo.svg"/>
+
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .tab-content {  margin-top:50px; font-size:13pt; padding-left:20px; display:none}
@@ -24,7 +29,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
   <span class="w3-bar-item w3-right" style='font-size:14pt'>
-    <img src='https://champ-ramard.fr/assets/images/logo.svg' width='30px'/>
+    <img src='assets/img/logo.svg' width='35px' style='-webkit-filter: invert(80%);'/>
     Administration de Champ-Ramard.fr
   </span>
 </div>
@@ -36,6 +41,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <span>Bienvenue dans l'espace d'administration du site,</span><br>
       <a href="https://www.ovh.com/fr/mail/" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
       <a href="https://www.facebook.com/earl.champramard" class="w3-bar-item w3-button"><i class="fa fa-facebook"></i></a>
+      <a href="https://api.champ-ramard.fr/secure/dashboard.php" target='_blank' class="w3-bar-item w3-button"><i class="fa fa-archive"></i></a>
       <!--<a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>-->
     </div>
   </div>
@@ -79,8 +85,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class='tab-content overview' style='display:block;'>
     <h2>Vue d'ensemble</h2>
 
-    <p>Voici l'évolution des commandes quotidiennes, vous pouvez zoomer en utilisant la souris et dézommer en cliquant sur le rond (-) situé en haut à droite du graphique.</p>
-    <div class="content" style="display:block"><div id="chartdiv" style='width:100%; height:450px;'></div></div>
+    <p>Voici l'évolution journalière des commandes, vous pouvez zoomer en utilisant la souris et dézommer en cliquant sur le rond (-) situé en haut à droite du graphique.</p>
+    <div class="content" style="display:block"><div id="chartdiv" style='width:100%; height:450px; font-size:10pt;'></div></div>
   </div>
 
   <div class='tab-content ordernow'>

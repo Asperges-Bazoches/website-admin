@@ -16,11 +16,12 @@ dateAxis.renderer.minGridDistance = 30;
 var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
 // Create series
-function createSeries(field, name, color) {
+function createSeries(field, name, color, unit) {
   var series = chart.series.push(new am4charts.LineSeries());
   series.dataFields.valueY = field;
   series.dataFields.dateX = "date";
   series.name = name;
+  series.unit = unit;
   series.tooltipText = "{dateX}: [b]{valueY}[/]";
   series.strokeWidth = 2;
   series.stroke = am4core.color(color);
@@ -29,7 +30,7 @@ function createSeries(field, name, color) {
   series.adapter.add("tooltipText", function(ev) {
     var text = "[bold]{dateX}[/]\n"
     chart.series.each(function(item) {
-      text += "[" + item.stroke.hex + "]●[/] " + item.name + ": {" + item.dataFields.valueY + "}\n";
+      text += "[" + item.stroke.hex + "]●[/] " + item.name + ": {" + item.dataFields.valueY + "}" + item.unit + "\n";
     });
     return text;
   });
@@ -49,9 +50,9 @@ function createSeries(field, name, color) {
   return series;
 }
 
-createSeries("aspb", "Asp. Blanches", "#000");
-createSeries("aspv", "Asp. Vertes", "#50ff50");
-createSeries("fraise", "Fraises", "#ff0000");
+createSeries("aspb", "Asp. Blanches", "#000", " kg");
+createSeries("aspv", "Asp. Vertes", "#50ff50", " kg");
+createSeries("fraise", "Fraises", "#ff0000", " x 250g");
 
 chart.legend = new am4charts.Legend();
 chart.cursor = new am4charts.XYCursor();
