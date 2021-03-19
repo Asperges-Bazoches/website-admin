@@ -4,6 +4,7 @@ am4core.useTheme(am4themes_animated);
 var chart = am4core.create("chartdiv", am4charts.XYChart);
 
 // Get daily aggregated data from API
+let data = '';
 try {data = JSON.parse(document.getElementById("daily_agg").contentWindow.document.body.innerText.replace(',];', ']')) } catch (e) {/* pass */}
 if (data == '') {data = [{"date": "2021-03-19", "aspb": 2, "aspv": 1, "fraise": 0},{"date": "2021-03-20", "aspb": 3, "aspv": 0, "fraise": 1}];}
 chart.data = data;
