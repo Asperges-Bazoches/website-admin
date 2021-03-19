@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<title>Administration de Champ-Ramard.fr</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.tab-content {  margin-top:50px; font-size:13pt; padding-left:20px; display:none}
+.iframe-resize { border:none }
+</style>
+
+<body class="w3-light-grey">
+
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+<iframe id="daily_agg" title="Get Cmd By Day" width="100%" height="1024px" style='display:none;'
+         src="https://api.champ-ramard.fr/secure/cmd_by_day.php"></iframe>
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-right" style='font-size:14pt'>
+    <img src='https://champ-ramard.fr/assets/images/logo.svg' width='30px'/>
+    Administration de Champ-Ramard.fr
+  </span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s8 w3-bar">
+      <span>Bienvenue dans l'espace d'administration du site,</span><br>
+      <a href="https://www.ovh.com/fr/mail/" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+      <a href="https://www.facebook.com/earl.champramard" class="w3-bar-item w3-button"><i class="fa fa-facebook"></i></a>
+      <!--<a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>-->
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Menu</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="#overview" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Vue d'ensemble</a>
+    <a href="#ordernow" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes du jour</a>
+    <a href="#ordertomorrow" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes de demain</a>
+    <a href="#order" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes non-archivées</a>
+    <a href="https://api.champ-ramard.fr/secure/download.php" target='_blank' class="w3-bar-item w3-button w3-padding">
+    <i class="fa fa-download fa-fw"></i>  Tout télécharger</a>
+
+
+    <!--<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Traffic</a>
+    <a href="#views" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Views</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Geo</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  News</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  General</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  History</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>-->
+  </div>
+
+ <hr>
+  <div class="w3-container printable">
+    <h5>Outils</h5>
+  </div>
+  <div class="w3-bar-block printable">
+    <a id='toprint' href="" target="_blank" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-print fa-fw"></i>  Imprimer</a>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<div class="w3-main" style="margin-left:300px; margin-top:43px;">
+
+  <div class='tab-content overview' style='display:block;'>
+    <h2>Vue d'ensemble</h2>
+
+    <p>Voici l'évolution des commandes quotidiennes, vous pouvez zoomer en utilisant la souris et dézommer en cliquant sur le rond (-) situé en haut à droite du graphique.</p>
+    <div class="content" style="display:block"><div id="chartdiv" style='width:100%; height:450px;'></div></div>
+  </div>
+
+  <div class='tab-content ordernow'>
+    <iframe class='iframe-resize' id="cmd_d" title="Today's orders" width= '100%' height='1024px'
+             src="https://api.champ-ramard.fr/secure/build_table.php?template=today"></iframe>
+  </div>
+
+  <div class='tab-content ordertomorrow'>
+    <iframe class='iframe-resize' id="cmd_d1" title="Tomorrow's orders"  width= '100%' height='1024px'
+             src="https://api.champ-ramard.fr/secure/build_table.php?template=tomorrow"></iframe>
+  </div>
+
+  <div class='tab-content order'>
+    <iframe class='iframe-resize' id="cmd_d1" title="Orders" width= '100%' height='1024px'
+             src="https://api.champ-ramard.fr/secure/build_table.php"></iframe>
+  </div>
+
+
+</div>
+
+<script src="assets/js/chart-overview.js"></script>
+
+
+<script>
+
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+
+
+function displayClass(name, val){
+  for (elem of document.getElementsByClassName(name)){
+    elem.style.display = val;
+  }
+}
+
+
+const link2print = {
+    "#ordernow" : "https://api.champ-ramard.fr/secure/build_table.php?template=today&print=1",
+    "#ordertomorrow" : "https://api.champ-ramard.fr/secure/build_table.php?template=tomorrow&print=1",
+    "#order" : "https://api.champ-ramard.fr/secure/build_table.php?print=1"
+}
+function locationHashChanged() {
+
+displayClass('tab-content', 'none')
+displayClass('printable', 'none')
+
+for (elem of document.getElementsByClassName('w3-button')){
+   if(elem.getAttribute('href') === location.hash){
+     elem.classList.add("w3-blue");
+     if (elem.classList.contains('isprintable')){
+       displayClass('printable', 'block')
+       document.getElementById('toprint').setAttribute("href", link2print[location.hash])
+     }
+   } else {
+     elem.classList.remove("w3-blue");
+   }
+ }
+ displayClass(location.hash.replace('#', ''), 'block')
+}
+window.onhashchange = locationHashChanged;
+locationHashChanged()
+
+for (iframe in document.getElementsByClassName('iframe-resize')){
+  iframe.onload = function() {
+     try {
+       div.style.height = div.contentWindow.document.body.scrollHeight + 'px';
+     } catch (e) {
+       // nothing
+     }
+  }
+}
+
+</script>
+
+</body>
+</html>
