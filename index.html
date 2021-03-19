@@ -83,7 +83,20 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <div class="w3-main" style="margin-left:300px; margin-top:43px;">
 
-  <div class='tab-content overview' style='display:block;'>
+  <div class='tab-content home'>
+    <h1>Nouvelle version de l'interface d'administration des commandes</h1>
+    <p>L'ancienne version est encore en ligne au cas où cette version contient des beugs. Pour retourner sur l'ancienne version, il suffit de cliquer sur l'icone <i class="fa fa-archive"></i> dans le menu de gauche.</p>
+    <p>Parmi les ajouts à venir (en fonction de la durée du confinement et de la météo) :</p>
+    <ul>
+      <li>La possibilité de (dés)activer en un clic la vente d'un ou plusieurs produits</li>
+      <li>La possibilité de changer le titre et le sous-titre de la page d'accueil</li>
+      <li>Plus de statistiques et de graphiques</li>
+      <li>Paramétrer l'emploi du temps de livraison (plutôt difficile à faire)</li>
+    </ul>
+    <p>Bon courage pour la journée de cueillette, de vente, et peut-être de livraison !</p>
+  </div>
+
+  <div class='tab-content overview'>
     <h2>Vue d'ensemble</h2>
 
     <p>Voici l'évolution journalière des commandes, vous pouvez zoomer en utilisant la souris et dézommer en cliquant sur le rond (-) situé en haut à droite du graphique.</p>
@@ -175,6 +188,8 @@ for (elem of document.getElementsByClassName('w3-button')){
 }
 window.onhashchange = locationHashChanged;
 locationHashChanged()
+displayClass('home', 'block')
+
 
 for (iframe in document.getElementsByClassName('iframe-resize')){
   iframe.onload = function() {
