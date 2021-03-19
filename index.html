@@ -55,6 +55,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="#ordernow" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes du jour</a>
     <a href="#ordertomorrow" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes de demain</a>
     <a href="#order" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes non-archivées</a>
+    <a href="#timetable" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calendar fa-fw"></i>  Planning livraison</a>
     <a href="https://api.champ-ramard.fr/secure/download.php" target='_blank' class="w3-bar-item w3-button w3-padding">
     <i class="fa fa-download fa-fw"></i>  Tout télécharger</a>
 
@@ -102,6 +103,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class='tab-content order'>
     <iframe class='iframe-resize' id="cmd_d1" title="Orders" width= '100%' height='1024px'
              src="https://api.champ-ramard.fr/secure/build_table.php"></iframe>
+  </div>
+
+  <div class='tab-content timetable'>
+    <iframe class='iframe-resize' id="cmd_d1" title="Orders" width= '100%' height='1024px'
+            style='margin-top: -110px;'
+             src="https://champ-ramard.fr/timetable.html"></iframe>
   </div>
 
 
