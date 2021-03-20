@@ -2,12 +2,36 @@ am4core.useTheme(am4themes_animated);
 
 // Create chart instance
 var chart = am4core.create("chartdiv", am4charts.XYChart);
+chart.data = [{"date": "2021-03-19", "aspb": 2, "aspv": 1, "fraise": 0},{"date": "2021-03-20", "aspb": 3, "aspv": 0, "fraise": 1}];
+
+function loadChartData(){
+  return JSON.parse(document.getElementById("daily_agg").contentWindow.document.body.innerText.replace(',];', ']'))
+}
+
+function cmdByDayLoaded(){
+  console.log('iframe with data loaded')
+  chart.data = JSON.parse(document.getElementById("daily_agg").contentDocument.getElementById('res').innerText.replace(',];', ']'))
+}
 
 // Get daily aggregated data from API
-let data = '';
-try {data = JSON.parse(document.getElementById("daily_agg").contentWindow.document.body.innerText.replace(',];', ']')) } catch (e) {/* pass */}
-if (data == '') {data = [{"date": "2021-03-19", "aspb": 2, "aspv": 1, "fraise": 0},{"date": "2021-03-20", "aspb": 3, "aspv": 0, "fraise": 1}];}
-chart.data = data;
+// var data = '';
+// var error_parsing = false;
+// try {
+//   data = loadChartData()
+// }catch(e){
+//   try {
+//     window.setTimeout('checkIframeLoaded();', 100);
+//     data = loadChartData()
+//   }catch(e){
+//     error_parsing = true;
+//     console.log("Error", e.stack);
+//     console.log("Error", e.name);
+//     console.log("Error", e.message);
+//   }
+// }
+
+
+
 
 // Create axes
 var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
