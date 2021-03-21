@@ -51,7 +51,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <h5>Menu</h5>
   </div>
   <div class="w3-bar-block">
-    <a href="#overview" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Vue d'ensemble</a>
+    <a href="#overview" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-dashboard fa-fw"></i>  Vue d'ensemble</a>
     <a href="#ordernow" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes du jour</a>
     <a href="#ordertomorrow" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes de demain</a>
     <a href="#order" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes non-archivées</a>
@@ -97,7 +97,93 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
 
   <div class='tab-content overview'>
-    <h2>Vue d'ensemble</h2>
+    <h3>Disponibilité des produits sur le formulaire de commande</h3>
+
+    <p>Vous aurez bientôt la possibilité d'activer ou de désactiver la vente des produits depuis cet espace d'administration.</p>
+
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-third">
+          <div class="w3-container w3-white w3-padding-16">
+            <div class="w3-left"><img src="assets/img/logo.svg" width="60px"></div>
+            <div class="w3-right">
+              <h1><i class="fa fa-check-circle" style='color:green'></i></h1>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Asperges blanches</h4>
+          </div>
+        </div>
+        <div class="w3-third">
+          <div class="w3-container w3-green w3-padding-16">
+            <div class="w3-left"><img src="assets/img/logo.svg" width="60px"></div>
+            <div class="w3-right">
+              <h1><i class="fa fa-times-circle" style='color:red'></i></h1>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Asperges vertes</h4>
+          </div>
+        </div>
+        <div class="w3-third">
+          <div class="w3-container w3-red w3-padding-16">
+            <div class="w3-left"><img src="assets/img/strawberry.svg" width="60px"></div>
+            <div class="w3-right">
+              <h1><i class="fa fa-times-circle" style='color:white'></i></h1>
+            </div>
+            <div class="w3-clear"></div>
+            <h4>Fraises</h4>
+          </div>
+        </div>
+      </div>
+
+    <hr/>
+
+    <h3>Commandes actives</h3>
+
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-quarter">
+          <div class="w3-container w3-teal w3-padding-16">
+            <div class="w3-left"><i class="fa fa-cart-arrow-down w3-xxxlarge"></i></div>
+            <div class="w3-right">
+              <h3>??</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h6>Actives (non archivées)</h6>
+          </div>
+        </div>
+        <div class="w3-quarter">
+          <div class="w3-container w3-teal w3-padding-16">
+            <div class="w3-left"><i class="fa fa-hourglass-half w3-xxxlarge"></i></div>
+            <div class="w3-right">
+              <h3>??</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h6>En attente d'une réponse</h6>
+          </div>
+        </div>
+        <div class="w3-quarter">
+          <div class="w3-container w3-green w3-padding-16">
+            <div class="w3-left"><i class="fa fa-check-square w3-xxxlarge"></i></div>
+            <div class="w3-right">
+              <h3>??</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h5>Acceptées</h5>
+          </div>
+        </div>
+        <div class="w3-quarter">
+          <div class="w3-container w3-red w3-padding-16">
+            <div class="w3-left"><i class="fa fa-times-circle w3-xxxlarge"></i></div>
+            <div class="w3-right">
+              <h3>??</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h5>Refusées</h5>
+          </div>
+        </div>
+      </div>
+
+    <hr/>
+
+    <h3>Volume commandé sur le site par produit et par jour</h3>
 
     <p>Voici l'évolution journalière des commandes, vous pouvez zoomer en utilisant la souris et dézommer en cliquant sur le rond (-) situé en haut à droite du graphique.</p>
     <div class="content" style="display:block"><div id="chartdiv" style='width:100%; height:450px; font-size:10pt;'></div></div>
