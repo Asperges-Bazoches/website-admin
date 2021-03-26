@@ -54,7 +54,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="#overview" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-dashboard fa-fw"></i>  Vue d'ensemble</a>
     <a href="#ordernow" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes du jour</a>
     <a href="#ordertomorrow" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes de demain</a>
-    <a href="#order" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes non-archivées</a>
+    <a href="#order" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i> Toutes les commandes futures</a>
     <a href="#timetable" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calendar fa-fw"></i>  Planning livraison</a>
     <a href="https://api.champ-ramard.fr/secure/download.php" target='_blank' class="w3-bar-item w3-button w3-padding">
     <i class="fa fa-download fa-fw"></i>  Tout télécharger</a>
@@ -129,7 +129,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
               <h3 id='stat-active'>...</h3>
             </div>
             <div class="w3-clear"></div>
-            <h6>Commandes non archivées</h6>
+            <h6>Commandes futures</h6>
           </div>
         </div>
         <div class="w3-quarter">
@@ -166,7 +166,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
     <hr/><h3>Volume commandé sur le site par produit et par jour</h3>
 
-    <p>Voici l'évolution journalière des commandes : seules les commandes, non archivées, acceptées ou en attente sont affichées dans ce graphique.</p>
+    <p>Voici l'évolution journalière des commandes acceptées ou en attente. Par défaut, le graphique est zoomé sur les 15 prochains jours.</p>
     <div class="content" style="display:block"><div id="chartdiv" style='width:100%; height:450px; font-size:10pt;'></div></div>
     <p><em>Astuce 1 : Vous pouvez zoomer en utilisant la souris et dézommer en cliquant sur le rond (-) situé en haut à droite du graphique.</em></p>
     <p><em>Astuce 2 : En passant la souris sur le graphique (ou en cliquant depuis un mobile), vous pouvez avoir un récapitulatif par produit.</em></p>

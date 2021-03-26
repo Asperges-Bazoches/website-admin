@@ -57,9 +57,9 @@ chart.legend = new am4charts.Legend();
 chart.cursor = new am4charts.XYCursor();
 chart.cursor.maxTooltipDistance = 0;
 
-// const xmin = new Date()
-// xmin.setDate(xmin.getDate() - 1)
-// const xmax = new Date(xmin)
-// xmax.setDate(xmax.getDate() + 15)
+const xmin = new Date()
+xmin.setDate(xmin.getDate() - 1)
+const xmax = new Date(xmin)
+xmax.setDate(xmax.getDate() + 15)
 
 chart.events.on("ready", function () {dateAxis.zoomToDates(xmin,xmax);});
