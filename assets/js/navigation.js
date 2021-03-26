@@ -41,7 +41,7 @@ function locationHashChanged() {
   displayClass('printable', 'none')
 
   // Get new Hash
-  hash = (location.hash != '') ? location.hash : '#home'
+  hash = (location.hash != '') ? location.hash : '#overview'
 
   // Retrieve selected button and disabled the others
   for (elem of document.getElementsByClassName('w3-button')){
