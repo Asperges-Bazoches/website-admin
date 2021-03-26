@@ -15,15 +15,19 @@ xAxis.dataFields.category = 'DAY'
 xAxis.renderer.cellStartLocation = 0.1
 xAxis.renderer.cellEndLocation = 0.9
 xAxis.renderer.grid.template.location = 0;
+xAxis.title.text = "La semaine qui vient";
 
 var yAxis = time_chart.yAxes.push(new am4charts.ValueAxis());
 yAxis.min = 0;
+yAxis.title.text = "Nombre de commandes par créneau";
 
-function createSeries(value, name) {
+function createSeries(value, name, color) {
     var series = time_chart.series.push(new am4charts.ColumnSeries())
     series.dataFields.valueY = value
     series.dataFields.categoryX = 'DAY'
     series.name = name
+    series.columns.template.stroke = am4core.color(color);
+    series.columns.template.fill = am4core.color(color);
 
     series.events.on("hidden", arrangeColumns);
     series.events.on("shown", arrangeColumns);
@@ -121,6 +125,7 @@ time_chart.data = [
 ]
 
 
-createSeries('10h-11h30', '10h-11h30');
-createSeries('11h30-13h', '11h30-13h');
-createSeries('14h-16h', '14h-16h');
+createSeries('10h-11h30', '10h-11h30', "#2E7D32");
+createSeries('11h30-13h', '11h30-13h', "#1565C0");
+createSeries('14h-16h', '14h-16h', '#D84315');
+createSeries('16h-18h', '16h-18h', "#4E342E");
