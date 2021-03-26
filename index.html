@@ -55,10 +55,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="#ordernow" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes du jour</a>
     <a href="#ordertomorrow" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes de demain</a>
     <a href="#order" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i> Toutes les commandes futures</a>
+    <a href="#orderall" class="w3-bar-item w3-button w3-padding isdownloadable"><i class="fa fa-cart-arrow-down fa-fw"></i> Toutes les commandes</a>
     <a href="#timetable" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calendar fa-fw"></i>  Planning livraison</a>
-    <a href="https://api.champ-ramard.fr/secure/download.php" target='_blank' class="w3-bar-item w3-button w3-padding">
-    <i class="fa fa-download fa-fw"></i>  Tout télécharger</a>
-
 
     <!--<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Traffic</a>
     <a href="#views" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Views</a>
@@ -70,11 +68,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
 
  <hr>
-  <div class="w3-container printable">
+  <div class="w3-container printable downloadable">
     <h5>Outils</h5>
   </div>
-  <div class="w3-bar-block printable">
-    <a id='toprint' href="" target="_blank" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-print fa-fw"></i>  Imprimer</a>
+  <div class="w3-bar-block printable downloadable">
+    <a id='toprint' href="" target="_blank" class="w3-bar-item w3-button w3-padding w3-blue printable"><i class="fa fa-print fa-fw"></i>  Imprimer</a>
+    <a href="https://api.champ-ramard.fr/secure/download.php" target='_blank' class="w3-bar-item w3-button w3-padding downloadable">
+      <i class="fa fa-download fa-fw"></i>  Télécharger</a>
   </div>
 </nav>
 
@@ -197,6 +197,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class='tab-content order'>
     <iframe class='iframe-resize' id="cmd_d1" title="Orders" width= '100%' height='1024px'
              src="https://api.champ-ramard.fr/secure/build_table.php"></iframe>
+  </div>
+
+  <!-- NEW TAB -->
+  <div class='tab-content orderall'>
+    <iframe class='iframe-resize' id="cmd_d1" title="Orders" width= '100%' height='1024px'
+             src="https://api.champ-ramard.fr/secure/build_table.php?template=all"></iframe>
   </div>
 
   <!-- NEW TAB -->

@@ -39,6 +39,7 @@ function locationHashChanged() {
   // Hide everything
   displayClass('tab-content', 'none')
   displayClass('printable', 'none')
+  displayClass('downloadable', 'none')
 
   // Get new Hash
   hash = (location.hash != '') ? location.hash : '#overview'
@@ -58,6 +59,9 @@ function locationHashChanged() {
     if (selectedElem.classList.contains('isprintable')){
       displayClass('printable', 'block')
       document.getElementById('toprint').setAttribute("href", link2print[location.hash])
+    }
+    if (selectedElem.classList.contains('isdownloadable')){
+      displayClass('downloadable', 'block')
     }
   }
 
