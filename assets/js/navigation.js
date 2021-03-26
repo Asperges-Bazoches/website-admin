@@ -65,6 +65,7 @@ function locationHashChanged() {
    displayClass(hash.replace('#', ''), 'block')
    // Scroll to top
    window.scrollTo(0, 0);
+   w3_close()
 }
 window.onhashchange = locationHashChanged;
 locationHashChanged()
