@@ -9,8 +9,10 @@ chart.data = [{"DAY": "2021-03-19", "ASPB": 2, "ASPV": 1, "FRAISE": 0},
 var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
 dateAxis.renderer.grid.template.location = 0;
 dateAxis.renderer.minGridDistance = 30;
+dateAxis.title.text = "Jour";
 
 var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.title.text = "Nombre de portions";
 
 // Create series
 function createSeries(field, name, color, unit) {
@@ -55,9 +57,9 @@ chart.legend = new am4charts.Legend();
 chart.cursor = new am4charts.XYCursor();
 chart.cursor.maxTooltipDistance = 0;
 
-const xmin = new Date()
-xmin.setDate(xmin.getDate() - 1)
-const xmax = new Date(xmin)
-xmax.setDate(xmax.getDate() + 15)
+// const xmin = new Date()
+// xmin.setDate(xmin.getDate() - 1)
+// const xmax = new Date(xmin)
+// xmax.setDate(xmax.getDate() + 15)
 
 chart.events.on("ready", function () {dateAxis.zoomToDates(xmin,xmax);});

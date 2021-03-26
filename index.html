@@ -86,13 +86,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- NEW TAB -->
   <div class='tab-content overview'>
 
-    <h3>Nouvelle version de l'interface d'administration</h3>
-
-    <p>L'ancienne version est encore en ligne au cas où cette version contient des beugs. Pour retourner sur l'ancienne version, il suffit de cliquer sur l'icone <i class="fa fa-archive"></i> dans le menu de gauche.</p>
-
-    <hr/><h3>Disponibilité des produits sur le formulaire de commande</h3>
-
-    <p>Vous aurez bientôt la possibilité d'activer ou de désactiver la vente des produits depuis cet espace d'administration.</p>
+    <br/>
 
     <div class="w3-row-padding w3-margin-bottom">
         <div class="w3-third">
@@ -106,20 +100,20 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           </div>
         </div>
         <div class="w3-third">
-          <div class="w3-container w3-green w3-padding-16">
+          <div class="w3-container w3-teal w3-padding-16">
             <div class="w3-left"><img src="assets/img/logo.svg" width="60px"></div>
             <div class="w3-right">
-              <h1><i class="fa fa-times-circle" style='color:white'></i></h1>
+              <h1><i class="fa fa-times-circle" style='color:red'></i></h1>
             </div>
             <div class="w3-clear"></div>
             <h4>Asperges vertes</h4>
           </div>
         </div>
         <div class="w3-third">
-          <div class="w3-container w3-red w3-padding-16">
+          <div class="w3-container w3-teal w3-padding-16">
             <div class="w3-left"><img src="assets/img/strawberry.svg" width="60px"></div>
             <div class="w3-right">
-              <h1><i class="fa fa-times-circle" style='color:white'></i></h1>
+              <h1><i class="fa fa-times-circle" style='color:red'></i></h1>
             </div>
             <div class="w3-clear"></div>
             <h4>Fraises</h4>
@@ -127,57 +121,64 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         </div>
       </div>
 
-    <hr/><h3>Commandes actives</h3>
-
     <div class="w3-row-padding w3-margin-bottom">
         <div class="w3-quarter">
           <div class="w3-container w3-teal w3-padding-16">
             <div class="w3-left"><i class="fa fa-cart-arrow-down w3-xxxlarge"></i></div>
             <div class="w3-right">
-              <h3 id='stat-active'>??</h3>
+              <h3 id='stat-active'>...</h3>
             </div>
             <div class="w3-clear"></div>
-            <h6>Actives (non archivées)</h6>
+            <h6>Commandes non archivées</h6>
           </div>
         </div>
         <div class="w3-quarter">
           <div class="w3-container w3-teal w3-padding-16">
             <div class="w3-left"><i class="fa fa-hourglass-half w3-xxxlarge"></i></div>
             <div class="w3-right">
-              <h3 id='stat-pending'>??</h3>
+              <h3 id='stat-pending'>...</h3>
             </div>
             <div class="w3-clear"></div>
-            <h6>En attente d'une réponse</h6>
+            <h6>Commandes en attente</h6>
           </div>
         </div>
         <div class="w3-quarter">
           <div class="w3-container w3-green w3-padding-16">
             <div class="w3-left"><i class="fa fa-check-square w3-xxxlarge"></i></div>
             <div class="w3-right">
-              <h3 id='stat-accepted'>??</h3>
+              <h3 id='stat-accepted'>...</h3>
             </div>
             <div class="w3-clear"></div>
-            <h5>Acceptées</h5>
+            <h6>Commandes acceptées</h6>
           </div>
         </div>
         <div class="w3-quarter">
           <div class="w3-container w3-red w3-padding-16">
             <div class="w3-left"><i class="fa fa-times-circle w3-xxxlarge"></i></div>
             <div class="w3-right">
-              <h3 id='stat-refused'>??</h3>
+              <h3 id='stat-refused'>...</h3>
             </div>
             <div class="w3-clear"></div>
-            <h5>Refusées</h5>
+            <h6>Commandes refusées</h6>
           </div>
         </div>
       </div>
 
-    <hr/>
+    <hr/><h3>Volume commandé sur le site par produit et par jour</h3>
 
-    <h3>Volume commandé sur le site par produit et par jour</h3>
-
-    <p>Voici l'évolution journalière des commandes, vous pouvez zoomer en utilisant la souris et dézommer en cliquant sur le rond (-) situé en haut à droite du graphique. Seules les commandes acceptées ou en attente sont affichées dans ce graphique.</p>
+    <p>Voici l'évolution journalière des commandes : seules les commandes, non archivées, acceptées ou en attente sont affichées dans ce graphique.</p>
     <div class="content" style="display:block"><div id="chartdiv" style='width:100%; height:450px; font-size:10pt;'></div></div>
+    <p><em>Astuce 1 : Vous pouvez zoomer en utilisant la souris et dézommer en cliquant sur le rond (-) situé en haut à droite du graphique.</em></p>
+    <p><em>Astuce 2 : En passant la souris sur le graphique (ou en cliquant depuis un mobile), vous pouvez avoir un récapitulatif par produit.</em></p>
+
+    <hr/><h3>Répartition des commandes acceptées, par jour et par créneau</h3>
+
+    <p>A venir...</p>
+
+    <hr/><h3>Revenir à l'ancienne version</h3>
+
+    <p>L'ancienne version de l'interface d'administration est encore disponible à l'adresse suivante : </p>
+    <p><a href='https://api.champ-ramard.fr/secure/dashboard.php'>https://api.champ-ramard.fr/secure/dashboard.php</a></p>
   </div>
 
   <!-- NEW TAB -->
