@@ -2,8 +2,8 @@ am4core.useTheme(am4themes_animated);
 
 // Create chart instance
 var chart = am4core.create("chartdiv", am4charts.XYChart);
-chart.data = [{"DAY": "2021-03-19", "sum(ASPB)": 2, "sum(ASPV)": 1, "sum(FRAISE)": 0},
-              {"DAY": "2021-03-20", "sum(ASPB)": 3, "sum(ASPV)": 0, "sum(FRAISE)": 1}];
+chart.data = [{"DAY": "2021-03-19", "ASPB": 2, "ASPV": 1, "FRAISE": 0},
+              {"DAY": "2021-03-20", "ASPB": 3, "ASPV": 0, "FRAISE": 1}];
 
 // Create axes
 var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
@@ -47,9 +47,9 @@ function createSeries(field, name, color, unit) {
   return series;
 }
 
-createSeries("sum(ASPB)", "Asp. Blanches", "#000", " kg");
-createSeries("sum(ASPV)", "Asp. Vertes", "#50ff50", " kg");
-createSeries("sum(FRAISE)", "Fraises", "#ff0000", " x 250g");
+createSeries("ASPB", "Asp. Blanches", "#000", " kg");
+createSeries("ASPV", "Asp. Vertes", "#50ff50", " kg");
+createSeries("FRAISE", "Fraises", "#ff0000", " x 250g");
 
 chart.legend = new am4charts.Legend();
 chart.cursor = new am4charts.XYCursor();
