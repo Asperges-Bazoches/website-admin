@@ -63,6 +63,8 @@ function locationHashChanged() {
 
    // Display content associated to hash
    displayClass(hash.replace('#', ''), 'block')
+   // Scroll to top
+   window.scrollTo(0, 0);
 }
 window.onhashchange = locationHashChanged;
 locationHashChanged()

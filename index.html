@@ -83,6 +83,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <div class="w3-main" style="margin-left:300px; margin-top:43px;">
 
+  <!-- NEW TAB : HOME -->
   <div class='tab-content home'>
     <h1>Nouvelle version de l'interface d'administration des commandes</h1>
     <p>L'ancienne version est encore en ligne au cas où cette version contient des beugs. Pour retourner sur l'ancienne version, il suffit de cliquer sur l'icone <i class="fa fa-archive"></i> dans le menu de gauche.</p>
@@ -96,6 +97,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <p>Bon courage pour la journée de cueillette, de vente, et peut-être de livraison !</p>
   </div>
 
+  <!-- NEW TAB -->
   <div class='tab-content overview'>
     <h3>Disponibilité des produits sur le formulaire de commande</h3>
 
@@ -189,21 +191,25 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div class="content" style="display:block"><div id="chartdiv" style='width:100%; height:450px; font-size:10pt;'></div></div>
   </div>
 
+  <!-- NEW TAB -->
   <div class='tab-content ordernow'>
     <iframe class='iframe-resize' id="cmd_d" title="Today's orders" width= '100%' height='1024px'
              src="https://api.champ-ramard.fr/secure/build_table.php?template=today"></iframe>
   </div>
 
+  <!-- NEW TAB -->
   <div class='tab-content ordertomorrow'>
     <iframe class='iframe-resize' id="cmd_d1" title="Tomorrow's orders"  width= '100%' height='1024px'
              src="https://api.champ-ramard.fr/secure/build_table.php?template=tomorrow"></iframe>
   </div>
 
+  <!-- NEW TAB -->
   <div class='tab-content order'>
     <iframe class='iframe-resize' id="cmd_d1" title="Orders" width= '100%' height='1024px'
              src="https://api.champ-ramard.fr/secure/build_table.php"></iframe>
   </div>
 
+  <!-- NEW TAB -->
   <div class='tab-content timetable'>
     <iframe class='iframe-resize' id="cmd_d1" title="Orders" width= '100%' height='1024px'
             style='margin-top: -130px;'
@@ -215,31 +221,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <script src="assets/js/navigation.js"></script>
 <script src="assets/js/chart-overview.js"></script>
-
-<script>
-
-function shorterTitle(name, val){
-  if($(window).width()<880){
-    document.getElementById('header-title').innerText = 'Champ-Ramard.fr'
-  } else {
-    document.getElementById('header-title').innerText = 'Administration de Champ-Ramard.fr'
-  }
-}
-$(window).on("resize", shorterTitle);
-shorterTitle();
-
-
-for (iframe in document.getElementsByClassName('iframe-resize')){
-  iframe.onload = function() {
-     try {
-       div.style.height = div.contentWindow.document.body.scrollHeight + 'px';
-     } catch (e) {
-       // nothing
-     }
-  }
-}
-
-</script>
+<script src="assets/js/responsive.js"></script>
 
 </body>
 </html>
