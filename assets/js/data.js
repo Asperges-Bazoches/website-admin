@@ -5,6 +5,7 @@ function cmdStatisticLoaded(){
 
   cmd_data = JSON.parse(document.getElementById("cmd_stat").contentDocument.getElementById('res').innerText);
   chart.data = cmd_data['detail'];
+  time_chart.data = cmd_data['rep-hour'];
   for(key of ['active', 'pending', 'accepted', 'refused']){
     document.getElementById('stat-'+key).innerText = cmd_data['overview'][key]
   }

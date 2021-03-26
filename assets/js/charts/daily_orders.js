@@ -1,7 +1,7 @@
 am4core.useTheme(am4themes_animated);
 
 // Create chart instance
-var chart = am4core.create("chartdiv", am4charts.XYChart);
+var chart = am4core.create("daily_orders", am4charts.XYChart);
 chart.data = [{"DAY": "2021-03-19", "ASPB": 2, "ASPV": 1, "FRAISE": 0},
               {"DAY": "2021-03-20", "ASPB": 3, "ASPV": 0, "FRAISE": 1},
               {"DAY": "2021-04-05", "ASPB": 3, "ASPV": 0, "FRAISE": 6}];
