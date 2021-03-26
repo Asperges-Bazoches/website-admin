@@ -3,7 +3,8 @@ am4core.useTheme(am4themes_animated);
 // Create chart instance
 var chart = am4core.create("chartdiv", am4charts.XYChart);
 chart.data = [{"DAY": "2021-03-19", "ASPB": 2, "ASPV": 1, "FRAISE": 0},
-              {"DAY": "2021-03-20", "ASPB": 3, "ASPV": 0, "FRAISE": 1}];
+              {"DAY": "2021-03-20", "ASPB": 3, "ASPV": 0, "FRAISE": 1},
+              {"DAY": "2021-04-05", "ASPB": 3, "ASPV": 0, "FRAISE": 6}];
 
 // Create axes
 var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
@@ -24,6 +25,7 @@ function createSeries(field, name, color, unit) {
   series.tooltipText = "{dateX}: [b]{valueY}[/]";
   series.strokeWidth = 2;
   series.stroke = am4core.color(color);
+  series.dateFormatter.monthsShort = ["Jan","Fev", "Mar","Avr", "Mai","Jun","Jul","Aou","Sep","Oct","Nov","Dec"];
 
   // Set up tooltip
   series.adapter.add("tooltipText", function(ev) {
@@ -49,7 +51,7 @@ function createSeries(field, name, color, unit) {
   return series;
 }
 
-createSeries("ASPB", "Asp. Blanches", "#000", " kg");
+s=createSeries("ASPB", "Asp. Blanches", "#000", " kg");
 createSeries("ASPV", "Asp. Vertes", "#50ff50", " kg");
 createSeries("FRAISE", "Fraises", "#ff0000", " x 250g");
 
