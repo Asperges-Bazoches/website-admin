@@ -2,36 +2,8 @@ am4core.useTheme(am4themes_animated);
 
 // Create chart instance
 var chart = am4core.create("chartdiv", am4charts.XYChart);
-chart.data = [{"date": "2021-03-19", "aspb": 2, "aspv": 1, "fraise": 0},{"date": "2021-03-20", "aspb": 3, "aspv": 0, "fraise": 1}];
-
-function loadChartData(){
-  return JSON.parse(document.getElementById("daily_agg").contentWindow.document.body.innerText.replace(',];', ']'))
-}
-
-function cmdByDayLoaded(){
-  console.log('iframe with data loaded')
-  chart.data = JSON.parse(document.getElementById("daily_agg").contentDocument.getElementById('res').innerText.replace(',];', ']'))
-}
-
-// Get daily aggregated data from API
-// var data = '';
-// var error_parsing = false;
-// try {
-//   data = loadChartData()
-// }catch(e){
-//   try {
-//     window.setTimeout('checkIframeLoaded();', 100);
-//     data = loadChartData()
-//   }catch(e){
-//     error_parsing = true;
-//     console.log("Error", e.stack);
-//     console.log("Error", e.name);
-//     console.log("Error", e.message);
-//   }
-// }
-
-
-
+chart.data = [{"DAY": "2021-03-19", "sum(ASPB)": 2, "sum(ASPV)": 1, "sum(FRAISE)": 0},
+              {"DAY": "2021-03-20", "sum(ASPB)": 3, "sum(ASPV)": 0, "sum(FRAISE)": 1}];
 
 // Create axes
 var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
@@ -44,7 +16,7 @@ var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 function createSeries(field, name, color, unit) {
   var series = chart.series.push(new am4charts.LineSeries());
   series.dataFields.valueY = field;
-  series.dataFields.dateX = "date";
+  series.dataFields.dateX = "DAY";
   series.name = name;
   series.unit = unit;
   series.tooltipText = "{dateX}: [b]{valueY}[/]";
@@ -75,9 +47,9 @@ function createSeries(field, name, color, unit) {
   return series;
 }
 
-createSeries("aspb", "Asp. Blanches", "#000", " kg");
-createSeries("aspv", "Asp. Vertes", "#50ff50", " kg");
-createSeries("fraise", "Fraises", "#ff0000", " x 250g");
+createSeries("sum(ASPB)", "Asp. Blanches", "#000", " kg");
+createSeries("sum(ASPV)", "Asp. Vertes", "#50ff50", " kg");
+createSeries("sum(FRAISE)", "Fraises", "#ff0000", " x 250g");
 
 chart.legend = new am4charts.Legend();
 chart.cursor = new am4charts.XYCursor();
