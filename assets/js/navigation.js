@@ -30,7 +30,8 @@ function displayClass(name, val){
 const link2print = {
     "#ordernow" : "https://api.champ-ramard.fr/secure/build_table.php?template=today&print=1",
     "#ordertomorrow" : "https://api.champ-ramard.fr/secure/build_table.php?template=tomorrow&print=1",
-    "#order" : "https://api.champ-ramard.fr/secure/build_table.php?print=1"
+    "#order" : "https://api.champ-ramard.fr/secure/build_table.php?print=1",
+    "#orderall" : "https://api.champ-ramard.fr/secure/build_table.php?template=all&print=1"
 }
 
 function locationHashChanged() {
