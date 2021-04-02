@@ -9,6 +9,12 @@ function cmdStatisticLoaded(){
   for(key of ['active', 'pending', 'accepted', 'refused']){
     document.getElementById('stat-'+key).innerText = cmd_data['overview'][key]
   }
+
+  const xmin = new Date()
+  xmin.setDate(xmin.getDate() - 1)
+  const xmax = new Date(xmin)
+  xmax.setDate(xmax.getDate() + 15)
+  chart.events.on("ready", function () {dateAxis.zoomToDates(xmin,xmax);});
 }
 
 // AVAILABILITY

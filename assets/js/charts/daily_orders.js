@@ -25,6 +25,7 @@ function createSeries(field, name, color, unit) {
   series.tooltipText = "{dateX}: [b]{valueY}[/]";
   series.strokeWidth = 2;
   series.stroke = am4core.color(color);
+  series.fill = am4core.color(color);
   series.dateFormatter.monthsShort = ["Jan","Fev", "Mar","Avr", "Mai","Jun","Jul","Aou","Sep","Oct","Nov","Dec"];
 
   // Set up tooltip
