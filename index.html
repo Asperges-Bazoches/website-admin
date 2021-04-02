@@ -57,6 +57,7 @@
     <a href="#ordertomorrow" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i>  Commandes de demain</a>
     <a href="#order" class="w3-bar-item w3-button w3-padding isprintable"><i class="fa fa-cart-arrow-down fa-fw"></i> Toutes les commandes futures</a>
     <a href="#orderall" class="w3-bar-item w3-button w3-padding isprintable isdownloadable"><i class="fa fa-cart-arrow-down fa-fw"></i> Toutes les commandes</a>
+    <a href="#settings" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cogs fa-fw"></i>  Paramétrage du site</a>
     <a href="#timetable" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calendar fa-fw"></i>  Planning livraison</a>
 
     <!--<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Traffic</a>
@@ -90,33 +91,32 @@
   <div class='tab-content overview'>
 
     <br/>
-
     <div class="w3-row-padding w3-margin-bottom">
         <div class="w3-third">
-          <div class="w3-container w3-white w3-padding-16">
+          <div class="w3-container w3-teal w3-padding-16" id="aspb-container">
             <div class="w3-left"><img src="assets/img/logo.svg" width="60px"></div>
             <div class="w3-right">
-              <h1><i class="fa fa-check-circle" style='color:green'></i></h1>
+              <h1><i class="fa fa-spinner" style='color:blue'></i></h1>
             </div>
             <div class="w3-clear"></div>
             <h4>Asperges blanches</h4>
           </div>
         </div>
         <div class="w3-third">
-          <div class="w3-container w3-teal w3-padding-16">
+          <div class="w3-container w3-teal w3-padding-16" id="aspv-container">
             <div class="w3-left"><img src="assets/img/logo.svg" width="60px"></div>
             <div class="w3-right">
-              <h1><i class="fa fa-times-circle" style='color:red'></i></h1>
+              <h1><i class="fa fa-spinner" style='color:blue'></i></h1>
             </div>
             <div class="w3-clear"></div>
             <h4>Asperges vertes</h4>
           </div>
         </div>
         <div class="w3-third">
-          <div class="w3-container w3-teal w3-padding-16">
+          <div class="w3-container w3-teal w3-padding-16" id="fraise-container">
             <div class="w3-left"><img src="assets/img/strawberry.svg" width="60px"></div>
             <div class="w3-right">
-              <h1><i class="fa fa-times-circle" style='color:red'></i></h1>
+              <h1><i class="fa fa-spinner" style='color:blue'></i></h1>
             </div>
             <div class="w3-clear"></div>
             <h4>Fraises</h4>
@@ -215,6 +215,11 @@
              src="https://champ-ramard.fr/timetable.html" sandbox></iframe>
   </div>
 
+  <!-- NEW TAB -->
+  <div class='tab-content settings'>
+    <iframe class='iframe-resize' id="cmd_d1" title="Orders" width= '100%' height='1024px'
+            src="https://api.champ-ramard.fr/secure/set_settings.php"></iframe>
+  </div>
 
 </div>
 
