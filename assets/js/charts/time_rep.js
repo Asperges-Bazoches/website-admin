@@ -25,9 +25,10 @@ function createSeries(value, name, color) {
     var series = time_chart.series.push(new am4charts.ColumnSeries())
     series.dataFields.valueY = value
     series.dataFields.categoryX = 'DAY'
-    series.name = name
+    series.name = name;
     series.columns.template.stroke = am4core.color(color);
     series.columns.template.fill = am4core.color(color);
+    series.columns.template.tooltipText = "[bold]{categoryX}[/] {name}: {valueY}";
 
     series.events.on("hidden", arrangeColumns);
     series.events.on("shown", arrangeColumns);
